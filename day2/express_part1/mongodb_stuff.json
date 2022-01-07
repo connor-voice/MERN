@@ -1,0 +1,32 @@
+{
+    "name":"Audi",
+    "quality":"Good",
+    "versions" : [
+        {
+            "name": "A5",
+            "engine-size":1400,
+            "engineFamily" :
+            {
+                "name": "big_boi_engine",
+                "size": "1.4 litre",
+                "engineCompany" :
+                {
+                    "name": "4thDocumentEngines"
+                }
+            }
+        },
+        {
+            "name": "A4",
+            "engine-size":1200,
+            "engineFamily" :
+            {
+                "name": "medium_boi_engine",
+                "size": "1.2 litre",
+                "engineCompany" :
+                {
+                    "name": "4thDocumentEngines"
+                }
+            }
+        }
+    ]
+}
