@@ -1,20 +1,25 @@
 const router = require("express").Router();
 
-const cLog = (req, res, next) => {
+const clog = (req, res, next) => {
     console.log(req.params.name);
+    next();
 }
 
 router.get("/getall", (req, res) => {
     res.status(202).send("connected");
-    console.log(req.params.name);
 })
 
-router.get("/getBy/:name", (req, res) => {
+
+router.get("/getByName/:name", clog, (req, res) => {
     res.status(202).send("connected");
-    console.log(req.params.name);
 })
 
-// request
+router.get("/get/:id", (req, res) => {
+    console.log(req.params.id);
+    res.status(202).send(`document of ${req.params.id} requested`);
+});
+
+
 router.post("/post", (req, res) => {
     res.status(201).send("connected");
     const body = req.body;
@@ -22,9 +27,10 @@ router.post("/post", (req, res) => {
 })
 
 router.put("/put/:id", (req, res) => {
-    res.status(202).send("connected");
+    
     console.log(req.params.id);
     console.log(req.body);
+    res.status(202).send(`connected and sent with ID of ${req.params.id}`);
 });
 
 
