@@ -12,9 +12,14 @@ app.use(cors());
 const audiRoutes = require("./routes/audiRoutes.js");
 const seatRoutes = require("./routes/seatRoutes.js");
 
+//non nested middleware
+app.use((req, res, next) => {
+    console.log(new Date());
+    next();
+});
+
 app.use("/audiRoutes", audiRoutes);
 app.use("/seatRoutes", seatRoutes);
-
 
 
 //Listen server
