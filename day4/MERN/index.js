@@ -10,7 +10,10 @@ app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect("mongodb://localhost:27017/car" , {useNewUrlParser: true}, 
+let dbURI = "testCar";
+// let dbURI = "car"; 
+
+mongoose.connect(`mongodb://localhost:27017/${dbURI}` , {useNewUrlParser: true}, 
 (error) => {
     if(error) {
         console.log("Cant connect to DB :( ");
